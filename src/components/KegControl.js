@@ -46,7 +46,7 @@ class KegControl extends React.Component {
   }
 
   handleSelectKeg = (id) => {
-    const selectedKeg = this.state.masterKegList.filter(ticket => ticket.id == id)[0];
+    const selectedKeg = this.state.masterKegList.filter(ticket => ticket.id === id)[0];
     this.setState({selectedKeg: selectedKeg});
   }
 
@@ -62,7 +62,7 @@ class KegControl extends React.Component {
       buttonText= "Return to Keg List"
     } else {
       buttonText= "Add a Keg"
-      currentView = <KegList kegList={this.state.masterKegList} />
+      currentView = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleSelectKeg}/>
     }
     return(
       <React.Fragment>

@@ -16,6 +16,7 @@ function KegList(props){
       <div style={styledKegList}>
         {props.kegList.map((keg) =>
           <Keg
+          whenKegClicked={props.onKegSelection}
           name={keg.name}
           ingredient={keg.ingredient}
           processingTime={keg.processingTime}
@@ -31,6 +32,7 @@ function KegList(props){
 
 KegList.propTypes = {
   kegList: PropTypes.array,
+  whenKegClicked: PropTypes.func
 };
 
 export default KegList;
