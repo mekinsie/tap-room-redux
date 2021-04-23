@@ -15,13 +15,17 @@ class KegControl extends React.Component {
         name: "Beer",
         ingredient: "Wheat",
         processingTime: "1 Day",
-        sellPrice: "200"
+        sellPrice: "200",
+        pintsLeft: 124,
+        id: 1
       },
       {
         name: "Pale Ale",
         ingredient: "Hops",
         processingTime: "1-2 Days",
-        sellPrice: "300"
+        sellPrice: "300",
+        pintsLeft: 124,
+        id: 2
       }
       ]
     };
@@ -50,11 +54,20 @@ class KegControl extends React.Component {
     this.setState({selectedKeg: selectedKeg});
   }
 
+  handleSellPint = (id) => {
+    const selectedKeg = this.state.masterKegList.filter(ticket => ticket.id === id)[0];
+    console.log(selectedKeg)
+    console.log(selectedKeg.pintsLeft)
+    selectedKeg.pintsLeft -= 1;
+    console.log(selectedKeg.pintsLeft)
+    this.setState({selectedKeg: selectedKeg});
+  }
+
   render(){
     let currentView = null;
     let buttonText = null;
     if (this.state.selectedKeg != null){
-      currentView = <KegDetail keg = {this.state.selectedKeg}/>
+      currentView = <KegDetail onSellPint = {this.handleSellPint} keg = {this.state.selectedKeg}/>
       buttonText= "Return to Keg List"
     }
     else if (this.state.formVisible){
