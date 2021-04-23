@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import gold from "./../img/36px-gold.png"
 import time from "./../img/time-icon.png"
 
@@ -18,6 +19,13 @@ function Keg(props){
       </div>
     </React.Fragment>
   );
+}
+
+Keg.propTypes = {
+  name: PropTypes.string.isRequired,
+  ingredient: PropTypes.string.isRequired,
+  processingTime: PropTypes.string.isRequired,
+  sellPrice: PropTypes.string.isRequired
 }
 
 export default Keg;
