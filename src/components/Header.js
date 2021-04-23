@@ -2,7 +2,9 @@ import React from "react";
 
 function Header(){
   const styledHeader= {
-    textAlign: "center"
+    textAlign: "center",
+    color: "rgb(255, 166, 57)",
+    textShadow: "2px 2px #61462a"
   }
   return(
     <div style={styledHeader}>
