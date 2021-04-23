@@ -19,6 +19,10 @@ Tap Room is an application that allows users to keep track of their kegs and pre
 * CSS
 
 * * *
+## Component Diagram
+<img src="./src/img/tap-room.png" alt="component diagram" width="650">
+
+* * *
 
 ## Software Requirements
 * **npm is required to run this application** 
@@ -49,10 +53,8 @@ $ npm start
 
 * * *
 
-## Component Diagram
-
-* * * 
 ## License
+
 > [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)\
 > Mekinsie Callahan &copy; 2021  
 * * *
