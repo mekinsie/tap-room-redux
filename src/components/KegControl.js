@@ -1,7 +1,6 @@
 import React from "react";
 import KegList from "./KegList"
 
-
 class KegControl extends React.Component {
 
   constructor(props){

@@ -6,7 +6,7 @@
 
 ## Description
 
-Tap Room is an application that allows users to keep track of their kegs and preserves jars. Kegs have full CRUD functionality. Users can sell pints of a keg by clicking on the sell button.
+Tap Room is a <a href="https://stardewvalleywiki.com/Stardew_Valley_Wiki">Stardew Valley</a> themed application that allows users to keep track of their kegs and preserves jars. Kegs have full CRUD functionality. Users can sell pints of a keg by clicking on the sell button.
 
 * * *
 

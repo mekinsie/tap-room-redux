@@ -3,7 +3,12 @@ import Keg from "./Keg";
 
 function KegList(){
   return(
-    <Keg />
+    <Keg 
+    name="Beer"
+    ingredient="Wheat"
+    processingTime="1 Day"
+    sellPrice="200g"
+    />
   );
 }
 
