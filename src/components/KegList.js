@@ -20,6 +20,8 @@ function KegList(props){
           ingredient={keg.ingredient}
           processingTime={keg.processingTime}
           sellPrice={keg.sellPrice}
+          id={keg.id}
+          key={keg.id}
           />
         )}
       </div>

@@ -13,13 +13,13 @@ class KegControl extends React.Component {
         name: "Beer",
         ingredient: "Wheat",
         processingTime: "1 Day",
-        sellPrice: "200g"
+        sellPrice: "200"
       },
       {
         name: "Pale Ale",
         ingredient: "Hops",
         processingTime: "1-2 Days",
-        sellPrice: "300g"
+        sellPrice: "300"
       }
       ]
     };
@@ -31,11 +31,16 @@ class KegControl extends React.Component {
     }));
   }
 
+  handleAddNewKeg = (newKeg) => {
+    const newMasterKegList = this.state.masterKegList.concat(newKeg);
+    this.setState({masterKegList: newMasterKegList, formVisible: false});
+  }
+
   render() {
     let currentView = null;
     let buttonText = null;
     if (this.state.formVisible){
-      currentView= <NewKegForm />
+      currentView=<NewKegForm onAddNewKeg={this.handleAddNewKeg}/>
       buttonText= "Return to Keg List"
     } else {
       buttonText= "Add a Keg"

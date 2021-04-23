@@ -7,7 +7,7 @@ function NewKegForm(props){
 
   function handleNewKegFormSubmission(event){
     event.preventDefault();
-    props.onNewKegCreation({name: event.target.name.value, ingregient: event.target.ingredient.value, processingTime: event.target.processingTime.value, sellPrice: event.target.sellPrice.value, })
+    props.onAddNewKeg({name: event.target.name.value, ingredient: event.target.ingredient.value, processingTime: event.target.processingTime.value, sellPrice: event.target.sellPrice.value, id: v4()});
   }
 
   return(
@@ -19,7 +19,7 @@ function NewKegForm(props){
 }
 
 NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onAddNewKeg: PropTypes.func
 };
 
 export default NewKegForm;
