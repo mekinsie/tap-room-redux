@@ -33,3 +33,23 @@ code {
   color:rgb(255, 166, 57);
   text-shadow: 2px 2px #61462a;
 }
+
+button {
+  background-color: rgb(230, 131, 0);
+  border: none;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px #61462a;
+  border-radius: 2px;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+#button-center{
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}

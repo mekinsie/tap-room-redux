@@ -6,6 +6,7 @@ function KegList(props){
   const styledKegList = {
     marginLeft: "200px",
     marginRight: "200px",
+    marginBottom: "200px",
     padding: "30px",
     backgroundColor: "rgba(0, 0, 0, 0.3)",
     textAlign: "center",

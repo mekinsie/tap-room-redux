@@ -26,6 +26,14 @@ class KegControl extends React.Component {
         sellPrice: "300",
         pintsLeft: 124,
         id: 2
+      },
+      {
+        name: "Mead",
+        ingredient: "Honey",
+        processingTime: "6 Days",
+        sellPrice: "200",
+        pintsLeft: 124,
+        id: 3
       }
       ]
     };
@@ -78,7 +86,7 @@ class KegControl extends React.Component {
     }
     return(
       <React.Fragment>
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button onClick={this.handleClick} id="button-center" >{buttonText}</button>
         {currentView}
       </React.Fragment>
     );
