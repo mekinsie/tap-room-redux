@@ -8,6 +8,7 @@ function KegDetail(props) {
     marginLeft: "200px",
     marginRight: "200px",
     padding: "30px",
+    paddingBottom: "80px",
     backgroundColor: "rgba(0, 0, 0, 0.3)",
     textAlign: "center",
     borderRadius: "3px"
