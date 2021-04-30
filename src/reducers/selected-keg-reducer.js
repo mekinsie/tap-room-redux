@@ -5,6 +5,6 @@ export default (state = false, action ) => {
   // case c.SELECT_KEG:
     
   // default:
-  // return state;
+  return state;
   // }
 };
