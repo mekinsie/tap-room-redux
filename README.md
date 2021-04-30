@@ -21,7 +21,7 @@ Tap Room is a <a href="https://stardewvalleywiki.com/Stardew_Valley_Wiki">Starde
 
 * * *
 ## Component Diagram
-<img src="./src/img/tap-room.png" alt="component diagram" width="650">
+<img src="./src/img/component-diagram.png" alt="component diagram" width="650">
 
 * * *
 
