@@ -4,7 +4,7 @@ import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail";
 import { connect } from 'react-redux';
 import * as a from './../actions';
-
+import PropTypes from "prop-types";
 
 class KegControl extends React.Component {
 
@@ -57,18 +57,18 @@ class KegControl extends React.Component {
 
   handleAddNewKeg = (newKeg) => {
     const { dispatch } = this.props;
-    const action = a.addKeg
+    const action = a.addKeg(newKeg)
     dispatch(action)
     this.setState({formVisible: false});
   }
 
   handleSelectKeg = (id) => {
-    const selectedKeg = this.state.masterKegList.filter(ticket => ticket.id === id)[0];
+    const selectedKeg = this.props.masterKegList[id];
     this.setState({selectedKeg: selectedKeg});
   }
 
   handleSellPint = (id) => {
-    const selectedKeg = this.state.masterKegList.filter(ticket => ticket.id === id)[0];
+    const selectedKeg = this.props.masterKegList[id];
     if (selectedKeg.pintsLeft > 0) {
     selectedKeg.pintsLeft -= 1;
     this.setState({selectedKeg: selectedKeg});
@@ -87,7 +87,7 @@ class KegControl extends React.Component {
       buttonText= "Return to Keg List"
     } else {
       buttonText= "Add a Keg"
-      currentView = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleSelectKeg}/>
+      currentView = <KegList kegList={this.props.masterKegList} onKegSelection={this.handleSelectKeg}/>
     }
     return(
       <React.Fragment>
@@ -98,6 +98,16 @@ class KegControl extends React.Component {
   }
 }
 
-KegControl = connect()(KegControl);
+KegControl.propTypes = {
+  masterKegList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    masterKegList: state.masterKegList
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 
 export default KegControl;
