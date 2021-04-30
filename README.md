@@ -1,4 +1,4 @@
-# Tap Room
+# Tap Room Redux
 
 ## By Mekinsie Callahan
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-Tap Room is a <a href="https://stardewvalleywiki.com/Stardew_Valley_Wiki">Stardew Valley</a> themed application that allows users to keep track of their kegs. Users can add kegs and sell pints on the detail page.
+Tap Room is a <a href="https://stardewvalleywiki.com/Stardew_Valley_Wiki">Stardew Valley</a> themed application that allows users to keep track of their kegs. Users can add kegs and sell pints on the detail page. The purpose of this application is to practice using Redux with React.
 
 * * *
 
@@ -17,6 +17,7 @@ Tap Room is a <a href="https://stardewvalleywiki.com/Stardew_Valley_Wiki">Starde
 * babel
 * JSX
 * CSS
+* Redux
 
 * * *
 ## Component Diagram
