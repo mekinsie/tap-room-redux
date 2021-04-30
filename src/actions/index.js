@@ -32,3 +32,10 @@ export const selectKeg = (keg) => {
     keg: keg
   }
 }
+
+export const sellPint = (keg) => {
+  return {
+    type: c.SELL_PINT,
+    keg: keg
+  }
+}

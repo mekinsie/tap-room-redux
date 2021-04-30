@@ -26,8 +26,6 @@ function KegDetail(props) {
         <p><strong>Processing Time: <img src={time} alt="time icon" width="18"></img></strong> {props.keg.processingTime}</p>
         <p><strong>Sell Price:</strong> <img src={gold} alt="gold coin" width="20"></img>{props.keg.sellPrice}g</p>
         <p><strong>Pints Left:</strong> {props.keg.pintsLeft} <button onClick={() => props.onSellPint(props.keg.id)}>Sell a pint</button></p>
-        <button>Edit Keg</button>
-        <button>Delete Keg</button>
       </div>
     </React.Fragment>
   )

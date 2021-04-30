@@ -39,13 +39,14 @@ class KegControl extends React.Component {
     dispatch(action)
   }
 
-  // handleSellPint = (id) => {
-  //   const selectedKeg = this.props.masterKegList[id];
-  //   if (selectedKeg.pintsLeft > 0) {
-  //   selectedKeg.pintsLeft -= 1;
-  //   this.setState({selectedKeg: selectedKeg});
-  //   }
-  // }
+  handleSellPint = (id) => {
+    const selectedKeg = this.props.masterKegList[id];
+    if (selectedKeg.pintsLeft > 0) {
+    const { dispatch } = this.props;
+    const action = a.sellPint(selectedKeg);
+    dispatch(action)
+    }
+  }
 
   render(){
     let currentView = null;
@@ -60,7 +61,6 @@ class KegControl extends React.Component {
     } else {
       buttonText= "Add a Keg"
       currentView = <KegList kegList={this.props.masterKegList} onKegSelection={this.handleSelectKeg}/>
-      
     }
     return(
       <React.Fragment>
