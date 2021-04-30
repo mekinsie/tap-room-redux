@@ -20,12 +20,23 @@ const keg = {
     action = a.selectKeg(keg)
     expect(selectedKegReducer(null, action)).toEqual({
       name: "Beer",
-        ingredient: "Wheat",
-        processingTime: "1 Day",
-        sellPrice: "200",
-        pintsLeft: 124,
-        id: 1
+      ingredient: "Wheat",
+      processingTime: "1 Day",
+      sellPrice: "200",
+      pintsLeft: 124,
+      id: 1
     });
   });
 
+  test('Should sell a pint when sell pint button is clicked', () => {
+    action = a.sellPint(keg)
+    expect(selectedKegReducer(null, action)).toEqual({
+      name: "Beer",
+      ingredient: "Wheat",
+      processingTime: "1 Day",
+      sellPrice: "200",
+      pintsLeft: 123,
+      id: 1
+    })
+  })
 });
