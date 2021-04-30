@@ -11,17 +11,15 @@ class KegControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      selectedKeg: null
     };
   };
 
   handleClick = () => {
-    if (this.state.selectedKeg != null){
-      this.setState({
-        selectedKeg: null
-      })
+    const {dispatch} = this.props;
+    if (this.props.selectedKeg != null){
+      const  action = a.selectKeg(null)
+      dispatch(action)
     } else {
-      const {dispatch} = this.props;
       const action = a.toggleForm()
       dispatch(action)
       };
@@ -35,26 +33,26 @@ class KegControl extends React.Component {
     dispatch(action2)
   }
 
-  handleSelectKeg = (id) => {
-    const selectedKeg = this.props.masterKegList[id];
-    this.setState({selectedKeg: selectedKeg});
+  handleSelectKeg = (keg) => {
+    const { dispatch } = this.props
+    const action = a.selectKeg(keg)
+    dispatch(action)
   }
 
-  handleSellPint = (id) => {
-    const selectedKeg = this.props.masterKegList[id];
-    if (selectedKeg.pintsLeft > 0) {
-    selectedKeg.pintsLeft -= 1;
-    this.setState({selectedKeg: selectedKeg});
-    }
-  }
+  // handleSellPint = (id) => {
+  //   const selectedKeg = this.props.masterKegList[id];
+  //   if (selectedKeg.pintsLeft > 0) {
+  //   selectedKeg.pintsLeft -= 1;
+  //   this.setState({selectedKeg: selectedKeg});
+  //   }
+  // }
 
   render(){
     let currentView = null;
     let buttonText = null;
-    if (this.state.selectedKeg != null){
-      currentView = <KegDetail onSellPint = {this.handleSellPint} keg = {this.state.selectedKeg}/>
+    if (this.props.selectedKeg != null){
+      currentView = <KegDetail onSellPint = {this.handleSellPint} keg = {this.props.selectedKeg}/>
       buttonText= "Return to Keg List"
-      console.log(this.state.selectedKeg)
     }
     else if (this.props.formVisible){
       currentView=<NewKegForm onAddNewKeg={this.handleAddNewKeg}/>
@@ -81,7 +79,8 @@ KegControl.propTypes = {
 const mapStateToProps = state => {
   return {
     masterKegList: state.masterKegList,
-    formVisible: state.formVisible
+    formVisible: state.formVisible,
+    selectedKeg: state.selectedKeg
   }
 }
 
