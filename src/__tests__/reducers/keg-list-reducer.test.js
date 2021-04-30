@@ -1,5 +1,4 @@
 import kegListReducer from '../../reducers/keg-list-reducer';
-import * as c from '../../actions/ActionTypes';
 import * as a from '../../actions/index.js'
 
 
@@ -51,7 +50,7 @@ describe('kegListRecuer', () => {
   });
 
   test('Should delete a keg from the master keg list', () => {
-    action = a.deleteKeg(1)
+    action = a.deleteKeg("1")
     expect(kegListReducer(currentState, action)).toEqual({
       2: {
         name: "Pale Ale",

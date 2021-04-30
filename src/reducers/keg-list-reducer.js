@@ -14,6 +14,10 @@ switch(action.type) {
         id: id
       }
     });
+  case c.DELETE_KEG:
+    let newState = { ...state };
+    delete newState[id];
+    return newState;
   default:
     return state;
   }

@@ -13,8 +13,10 @@ export const addKeg = (keg) => {
   }
 }
 
-export const deleteKeg = id = ({
+export const deleteKeg = id => {
+  return {
     type: c.DELETE_KEG,
     id: id
-})
+  }
+}
 
