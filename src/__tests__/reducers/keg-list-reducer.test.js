@@ -1,7 +1,6 @@
 import kegListReducer from '../../reducers/keg-list-reducer';
 import * as a from '../../actions/index.js'
 
-
 describe('kegListRecuer', () => {
   let action;
   const kegFormData = {
