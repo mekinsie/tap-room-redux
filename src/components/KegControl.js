@@ -3,6 +3,8 @@ import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail";
 import { connect } from 'react-redux';
+import * as a from './../actions';
+
 
 class KegControl extends React.Component {
 
@@ -11,32 +13,32 @@ class KegControl extends React.Component {
     this.state = {
       formVisible: false,
       selectedKeg: null,
-      masterKegList: [
-      {
-        name: "Beer",
-        ingredient: "Wheat",
-        processingTime: "1 Day",
-        sellPrice: "200",
-        pintsLeft: 124,
-        id: 1
-      },
-      {
-        name: "Pale Ale",
-        ingredient: "Hops",
-        processingTime: "1-2 Days",
-        sellPrice: "300",
-        pintsLeft: 124,
-        id: 2
-      },
-      {
-        name: "Mead",
-        ingredient: "Honey",
-        processingTime: "6 Days",
-        sellPrice: "200",
-        pintsLeft: 124,
-        id: 3
-      }
-      ]
+      // masterKegList: [
+      // {
+      //   name: "Beer",
+      //   ingredient: "Wheat",
+      //   processingTime: "1 Day",
+      //   sellPrice: "200",
+      //   pintsLeft: 124,
+      //   id: 1
+      // },
+      // {
+      //   name: "Pale Ale",
+      //   ingredient: "Hops",
+      //   processingTime: "1-2 Days",
+      //   sellPrice: "300",
+      //   pintsLeft: 124,
+      //   id: 2
+      // },
+      // {
+      //   name: "Mead",
+      //   ingredient: "Honey",
+      //   processingTime: "6 Days",
+      //   sellPrice: "200",
+      //   pintsLeft: 124,
+      //   id: 3
+      // }
+      // ]
     };
   };
 
@@ -54,8 +56,10 @@ class KegControl extends React.Component {
   }
 
   handleAddNewKeg = (newKeg) => {
-    const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    this.setState({masterKegList: newMasterKegList, formVisible: false});
+    const { dispatch } = this.props;
+    const action = a.addKeg
+    dispatch(action)
+    this.setState({formVisible: false});
   }
 
   handleSelectKeg = (id) => {
