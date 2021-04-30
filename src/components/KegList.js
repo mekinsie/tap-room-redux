@@ -27,33 +27,6 @@ function KegList(props){
           keg={keg}
           />
         )}
-      <Keg
-        whenKegClicked={props.onKegSelection}
-        name= "Beer"
-        ingredient= "Wheat"
-        processingTime= "1 Day"
-        sellPrice= "200"
-        id= "1"
-        key= "1" 
-      />
-      <Keg
-        whenKegClicked={props.onKegSelection}
-        name= "Pale Ale"
-        ingredient= "Hops"
-        processingTime= "1-2 Days"
-        sellPrice= "300"
-        id= "2"
-        key= "2"
-      />
-      <Keg
-        whenKegClicked={props.onKegSelection}
-        name= "Mead"
-        ingredient= "Honey"
-        processingTime= "6 Days"
-        sellPrice= "200"
-        id= "3"
-        key= "3"
-      /> 
       </div>
     </React.Fragment>
   );
