@@ -24,9 +24,8 @@ class KegControl extends React.Component {
       const {dispatch} = this.props;
       const action = a.toggleForm()
       dispatch(action)
-      }));
+      };
     }
-  }
 
   handleAddNewKeg = (newKeg) => {
     const { dispatch } = this.props;
@@ -34,7 +33,6 @@ class KegControl extends React.Component {
     const action2 = a.toggleForm()
     dispatch(action)
     dispatch(action2)
-
   }
 
   handleSelectKeg = (id) => {
@@ -56,6 +54,7 @@ class KegControl extends React.Component {
     if (this.state.selectedKeg != null){
       currentView = <KegDetail onSellPint = {this.handleSellPint} keg = {this.state.selectedKeg}/>
       buttonText= "Return to Keg List"
+      console.log(this.state.selectedKeg)
     }
     else if (this.props.formVisible){
       currentView=<NewKegForm onAddNewKeg={this.handleAddNewKeg}/>

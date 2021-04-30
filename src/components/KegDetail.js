@@ -21,6 +21,7 @@ function KegDetail(props) {
     <React.Fragment>
       <div style={styledKegDetail}>
         <h1 style={styledh1}>{props.keg.name}</h1>
+
         <p><strong>Ingredient:</strong> {props.keg.ingredient}</p>
         <p><strong>Processing Time: <img src={time} alt="time icon" width="18"></img></strong> {props.keg.processingTime}</p>
         <p><strong>Sell Price:</strong> <img src={gold} alt="gold coin" width="20"></img>{props.keg.sellPrice}g</p>
