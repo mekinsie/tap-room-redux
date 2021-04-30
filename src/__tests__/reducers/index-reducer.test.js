@@ -37,4 +37,12 @@ test('Check that ADD_KEG action works for KegListReducer and root reducer', () =
   expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
 });
 
+test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
+  const action = {
+    type: a.TOGGLE_FORM
+  }
+  store.dispatch(action);
+  expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, action));
+});
+
 });
