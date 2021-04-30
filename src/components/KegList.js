@@ -24,6 +24,7 @@ function KegList(props){
           sellPrice={keg.sellPrice}
           id={keg.id}
           key={keg.id}
+          keg={keg}
           />
         )}
       <Keg

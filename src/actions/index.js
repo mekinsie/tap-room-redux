@@ -25,3 +25,10 @@ export const toggleForm = () => {
     type: c.TOGGLE_FORM
   }
 }
+
+export const selectKeg = (keg) => {
+  return {
+    type: c.SELECT_KEG,
+    keg: keg
+  }
+}
