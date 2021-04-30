@@ -2,6 +2,8 @@ import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
+import * as a from '../../actions/ActionTypes.js'
+
 
 describe("rootReducer", () => {
   let store = createStore(rootReducer);
@@ -21,7 +23,18 @@ describe("rootReducer", () => {
     expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, { type: null }));
   });
 
-
-
+test('Check that ADD_KEG action works for KegListReducer and root reducer', () => {
+  const action = {
+    type: a.ADD_KEG,
+    name: "Beer",
+    ingredient: "Wheat",
+    processingTime: "1 Day",
+    sellPrice: "200",
+    pintsLeft: 124,
+    id: 1
+  }
+  store.dispatch(action);
+  expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
+});
 
 });
