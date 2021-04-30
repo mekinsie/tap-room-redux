@@ -5,7 +5,7 @@ import kegListReducer from '../../reducers/keg-list-reducer';
 
 describe("rootReducer", () => {
   let store = createStore(rootReducer);
-  
+
   test('Should return default state if no action type is recognized', () => {
     expect(rootReducer({}, {type: null})).toEqual({
       masterKegList: {},
@@ -16,6 +16,12 @@ describe("rootReducer", () => {
   test('Check that initial state of kegListReducer matches root reducer', () => {
     expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, { type: null }));
   });
+
+  test('Check that initial state of formVisibleReducer matches root reducer', () => {
+    expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, { type: null }));
+  });
+
+
 
 
 });
