@@ -8,15 +8,17 @@ import PropTypes from "prop-types";
 
 class KegControl extends React.Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-    };
-  };
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //   };
+  // };
 
   handleClick = () => {
     const {dispatch} = this.props;
     if (this.props.selectedKeg != null){
+      const action2 = a.addKeg(this.props.selectedKeg);
+      dispatch(action2)
       const  action = a.selectKeg(null)
       dispatch(action)
     } else {
