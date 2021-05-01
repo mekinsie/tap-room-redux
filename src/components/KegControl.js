@@ -8,40 +8,6 @@ import PropTypes from "prop-types";
 
 class KegControl extends React.Component {
 
-  addExampleKegs = () => {
-    const {dispatch} = this.props;
-    const keg1 =  {
-      name: "Beer",
-      ingredient: "Wheat",
-      processingTime: "1 Day",
-      sellPrice: "200",
-      pintsLeft: 124,
-      id: 1
-    }
-    const keg2 = {
-      name: "Pale Ale",
-      ingredient: "Hops",
-      processingTime: "1-2 Days",
-      sellPrice: "300",
-      pintsLeft: 124,
-      id: 2
-    }
-    const keg3 = {
-      name: "Mead",
-      ingredient: "Honey",
-      processingTime: "6 Days",
-      sellPrice: "200",
-      pintsLeft: 124,
-      id: 3
-    }
-    const action1 = a.addKeg(keg1);
-      dispatch(action1)
-    const action2 = a.addKeg(keg2);
-      dispatch(action2)
-    const action3 = a.addKeg(keg3);
-      dispatch(action3)
-  }
-
   handleClick = () => {
     const {dispatch} = this.props;
     if (this.props.selectedKeg != null){
@@ -89,11 +55,14 @@ class KegControl extends React.Component {
       buttonText= "Return to Keg List"
     } else {
       buttonText= "Add a Keg"
-      currentView = <KegList kegList={this.props.masterKegList} onKegSelection={this.handleSelectKeg}/>
+      currentView = <KegList kegList={this.props.masterKegList} onKegSelection={this.handleSelectKeg}
+      
+      onAddNewKeg={this.handleAddNewKeg}
+      
+      />
     }
     return(
       <React.Fragment>
-        {this.addExampleKegs()}
         <button onClick={this.handleClick} id="button-center" >{buttonText}</button>
         {currentView}
       </React.Fragment>
