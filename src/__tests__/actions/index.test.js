@@ -21,6 +21,14 @@ describe('tap room actions', () => {
     });
   });
 
+  it('toggleFrom should create TOGGLE_FORM action', () => {
+    expect(actions.toggleForm()).toEqual({
+      type: c.TOGGLE_FORM
+    });
+  });
+
+  
+
 });
 
 
