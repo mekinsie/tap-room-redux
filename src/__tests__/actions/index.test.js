@@ -34,6 +34,13 @@ describe('tap room actions', () => {
     });
   });
 
+  it('sellPint should create SELL_PINT action', () => {
+    expect(actions.sellPint({name: "Beer", ingredient: "Wheat", processingTime: "1 Day", sellPrice: "200", pintsLeft: 124, id: 1})).toEqual({
+      type: c.SELL_PINT,
+      keg: {name: "Beer", ingredient: "Wheat", processingTime: "1 Day", sellPrice: "200", pintsLeft: 124, id: 1}
+    });
+  });
+
 });
 
 
