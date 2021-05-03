@@ -27,7 +27,12 @@ describe('tap room actions', () => {
     });
   });
 
-  
+  it('selectKeg should create SELECT_KEG action', () => {
+    expect(actions.selectKeg({name: "Beer", ingredient: "Wheat", processingTime: "1 Day", sellPrice: "200", pintsLeft: 124, id: 1})).toEqual({
+      type: c.SELECT_KEG,
+      keg: {name: "Beer", ingredient: "Wheat", processingTime: "1 Day", sellPrice: "200", pintsLeft: 124, id: 1}
+    });
+  });
 
 });
 
