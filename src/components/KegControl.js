@@ -8,6 +8,32 @@ import PropTypes from "prop-types";
 
 class KegControl extends React.Component {
 
+
+    // const keg1 =  {
+    //   name: "Beer",
+    //   ingredient: "Wheat",
+    //   processingTime: "1 Day",
+    //   sellPrice: "200",
+    //   pintsLeft: 124,
+    //   id: 1
+    // }
+    // const keg2 = {
+    //   name: "Pale Ale",
+    //   ingredient: "Hops",
+    //   processingTime: "1-2 Days",
+    //   sellPrice: "300",
+    //   pintsLeft: 124,
+    //   id: 2
+    // }
+    // const keg3 = {
+    //   name: "Mead",
+    //   ingredient: "Honey",
+    //   processingTime: "6 Days",
+    //   sellPrice: "200",
+    //   pintsLeft: 124,
+    //   id: 3
+    // }
+
   handleClick = () => {
     const {dispatch} = this.props;
     if (this.props.selectedKeg != null){
